@@ -102,23 +102,6 @@ public static int input_Special_Rates() {	// 4. 우대사항
 
 
 
-//public void save_List_Of_Orders () { //주문 이력 저장 배열~ 
-//	int [][] list_of_orders = new int [100][5];
-//	
-//	list_of_orders[cal.cal_Orders_Count()][0] = Input.input_Ticket_Select();
-//	list_of_orders[cal.cal_Orders_Count()][1] = cal.cal_Age_Group(cal.age(input_ID_Num()));
-//	list_of_orders[cal.cal_Orders_Count()][2] = Input.input_Ticket_Amount();
-//	list_of_orders[cal.cal_Orders_Count()][3] = 1000; // 여기는 가격 함수 들어와야함!!
-//	list_of_orders[cal.cal_Orders_Count()][4] = Input.input_Special_Rates();
-//	
-//	print.print_List_Of_Orders(list_of_orders);
-//}
-
-
-
-
-
-
 public int input_Continue () { //위 주문입력이 끝났을 때 
   
 	int input_continue = 0;

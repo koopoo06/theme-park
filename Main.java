@@ -25,7 +25,6 @@ public static void main(String[] args){
 		main.c = Input.input_Special_Rates();
 		main.f = Input.input_Ticket_Amount();
 		
-		
 		main.x = (cal.cal_Price(main.a, main.b, main.c,main.f));
 		Print.print_price(main.x);
 		
@@ -35,15 +34,17 @@ public static void main(String[] args){
 		orderlist.set_Order_List();
 		
 
-
-		//test
+		
+		
 		
 		main.d = input.input_Continue();
 		if (main.d == 2) {
 			break;
 		}
-		}
-		
+	}
+	
+	orderlist.getOrderList();
+	
 	print.print_List_Of_Orders();
 	main.e = input.input_Continue_Continue();
 	} while (main.e == 1); 	
