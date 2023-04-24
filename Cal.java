@@ -1,13 +1,25 @@
 package Practice;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class Cal {
 
-public class Const { //final º¯¼öµé ¼±¾ğ
-	// ±ÇÁ¾º° °¡°İ
+public class Const { //final ë³€ìˆ˜ë“¤ ì„ ì–¸
+	// ê¶Œì¢…ë³„ ê°€ê²©
 	final static int PRICE_ARRAY[][] = {{0,0,44000,47000,56000,44000},{0,0,37000,40000,46000,37000}};
 	
-	//³ªÀÌ ±¸ÇÏ±â
+	//ê³„ì†
+	final static int EXIT = 1;
+	
+	//language 
+	final static int 
+	KR  = 0,
+	US = 1,
+	ES = 2;
+	
+	
+	
+	//ë‚˜ì´ êµ¬í•˜ê¸°
 	final static int 
 	OLD_GENERATION = 1900, 
 	NEW_GENERATION = 2000,
@@ -19,7 +31,7 @@ public class Const { //final º¯¼öµé ¼±¾ğ
 	AFTER_BIRTH = 1;
 	
 		
-	//±×·ìº° ³ªÀÌ
+	//ê·¸ë£¹ë³„ ë‚˜ì´
 	final static int 
 	MIN_BABY = 1, 
 	MIN_CHILD = 3, 
@@ -29,7 +41,7 @@ public class Const { //final º¯¼öµé ¼±¾ğ
 	MAX_TEEN = 18, 
 	MAX_ADULT = 64;
 	
-	// ³ªÀÌ¿¡ µû¸¥ ±×·ì
+	// ë‚˜ì´ì— ë”°ë¥¸ ê·¸ë£¹
 	final static int 
 	BABY = 1, 
 	CHILD = 2, 
@@ -38,36 +50,101 @@ public class Const { //final º¯¼öµé ¼±¾ğ
 	OLD = 5;
 	
 	
-	// ÇÒÀÎÀ²
+	// í• ì¸ìœ¨
 	final static float 
 	DISABLE_DISCOUNT_RATE = 0.6f, 
 	MERIT_DISCOUNT_RATE = 0.5f,
 	MULTICHILD_DISCOUNT_RATE = 0.8f, 
 	PREGNANT_DISCOUNT_RATE = 0.85f;
 	
-	//Á¾ÀÏ±Ç 
-	final static 
-	String DAY_TICKET = "ÁÖ°£±Ç", 
-	NIGHT_TICKET = "¾ß°£±Ç";
+		
 	
-	//³ªÀÌº°
-	final static 
-	String AGE_BABY = "À¯¾Æ",
-	AGE_CHILD = "¼ÒÀÎ", 
-	AGE_TEEN = "Ã»¼Ò³â", 
-	AGE_ADULT = "´ëÀÎ", 
-	AGE_OLD = "°æ·Î";
+	//ì¢…ì¼ê¶Œ 
+	final static String 
+	DAY_TICKET = "ì£¼ê°„ê¶Œ", 
+	NIGHT_TICKET = "ì•¼ê°„ê¶Œ",
+	ENG_DAY_TICKET = "DAY", 
+	ENG_NIGHT_TICKET = "NIGHT",
+	ESP_DAY_TICKET = "DÃA",
+	ESP_NIGHT_TICKET = "NOCHE";
 	
-	//¿ì´ëÀû¿ë
-	final static 
-	String NO_DISCOUNT  = "¿ì´ëÀû¿ë ¾øÀ½", 
-	DISABLE_DISCOUNT = "Àå¾ÖÀÎ ¿ì´ëÀû¿ë", 
-	MERIT_DISCOUNT = "±¹°¡À¯°øÀÚ ¿ì´ëÀû¿ë" , 
-	MULTICHILD_DISCOUNT = "´ÙÀÚ³à ¿ì´ëÀû¿ë" , 
-	PREGNANT_DISCOUNT = "ÀÓ»êºÎ ¿ì´ëÀû¿ë";
+	//ë‚˜ì´ë³„
+	final static String 
+	AGE_BABY = "ìœ ì•„",
+	AGE_CHILD = "ì†Œì¸", 
+	AGE_TEEN = "ì²­ì†Œë…„", 
+	AGE_ADULT = "ëŒ€ì¸", 
+	AGE_OLD = "ê²½ë¡œ",
+	ENG_AGE_BABY = "BABY",
+	ENG_AGE_CHILD = "CHILD", 
+	ENG_AGE_TEEN = "TEENAGER", 
+	ENG_AGE_ADULT = "ADULT", 
+	ENG_AGE_OLD = "ELDER",
+	ESP_AGE_BABY = "BEBÃ‰",
+	ESP_AGE_CHILD = "NIÃ‘O",
+	ESP_AGE_TEEN = "ADOLESCENTE",
+	ESP_AGE_ADULT = "ADULTO",
+	ESP_AGE_OLD = "ANCIANO";
+	
+	//ìš°ëŒ€ì ìš©
+	final static String 
+	NO_DISCOUNT  = "ìš°ëŒ€ì ìš© ì—†ìŒ", 
+	DISABLE_DISCOUNT = "ì¥ì• ì¸ ìš°ëŒ€ì ìš©", 
+	MERIT_DISCOUNT = "êµ­ê°€ìœ ê³µì ìš°ëŒ€ì ìš©" , 
+	MULTICHILD_DISCOUNT = "ë‹¤ìë…€ ìš°ëŒ€ì ìš©" , 
+	PREGNANT_DISCOUNT = "ì„ì‚°ë¶€ ìš°ëŒ€ì ìš©",
+	ENG_NO_DISCOUNT  = "NO DISCOUNT", 
+	ENG_DISABLE_DISCOUNT = "DISABLE DISCOUNT", 
+	ENG_MERIT_DISCOUNT = "MERIT DISCOUNT" , 
+	ENG_MULTICHILD_DISCOUNT = "MULTICHILD DISCOUNT", 
+	ENG_PREGNANT_DISCOUNT = "PREGNANT DISCOUNT",
+	ESP_NO_DISCOUNT = "SIN DESCUENTO",
+	ESP_DISABLE_DISCOUNT = "DESHABILITAR DESCUENTO",
+	ESP_MERIT_DISCOUNT = "DESCUENTO POR MÃ‰RITO",
+	ESP_MULTICHILD_DISCOUNT = "DESCUENTO MULTINIÃ‘O",
+	ESP_PREGNANT_DISCOUNT = "DESCUENTO PARA EMBARAZADAS";
+	
+	
+public static int LANGUAGE; 
+
+public static String 
+ERROR_MESSAGE,
+QUESTION_TICKETSELECT,
+QUESTION_ID_NUM,
+QUESTION_TICKET_AMOUNT,
+QUESTION_SPECIAL,
+PRICE_MESSAGE,
+HEADER_MESSAGE,
+TOTALPRICE_MESSAGE,
+QUESTION_CONTINUE,
+QUESTION_CONTINUE_FINAL;
+
+
+//ìƒë‹¨ ì œëª©
+public static String
+TICKET_SELECT,
+AGE,
+COUNT,
+PRICE,
+DISCOUNT;
 }
 
-public int cal_Age () { //1. ÀÔ·Â¹ŞÀº ÁÖ¹Î¹øÈ£¿¡¼­ »ı³â¿ùÀÏ ±¸ÇÏ±â
+	
+public void cal_language() {
+	Locale currentLocale = Locale.getDefault();
+	if (currentLocale.getCountry().equals("KR")) {
+		Const.LANGUAGE = Const.KR;
+	} else if (currentLocale.getCountry().equals("US")) {
+		Const.LANGUAGE = Const.US;
+	} else if (currentLocale.getCountry().equals("ES")) {
+		Const.LANGUAGE = Const.ES;
+	}
+}
+
+	
+
+
+public int cal_Age () { //1. ì…ë ¥ë°›ì€ ì£¼ë¯¼ë²ˆí˜¸ì—ì„œ ìƒë…„ì›”ì¼ êµ¬í•˜ê¸°
 	String cal_id_num = Input.input_ID_Num(); 
 	
 	int age = 0;
@@ -76,7 +153,7 @@ public int cal_Age () { //1. ÀÔ·Â¹ŞÀº ÁÖ¹Î¹øÈ£¿¡¼­ »ı³â¿ùÀÏ ±¸ÇÏ±â
 	int user_day = 0;
 	
 	if (Integer.parseInt(cal_id_num.substring(6, 7)) == 3 || 
-		Integer.parseInt(cal_id_num.substring(6, 7)) == 4) { // 7¹øÂ° ÀÚ¸®°¡ 3 ¶Ç´Â 4ÀÎ °æ¿ì Ã³¸®ÇÒ ³»¿ë
+		Integer.parseInt(cal_id_num.substring(6, 7)) == 4) { // 7ë²ˆì§¸ ìë¦¬ê°€ 3 ë˜ëŠ” 4ì¸ ê²½ìš° ì²˜ë¦¬í•  ë‚´ìš©
 		user_year = Const.NEW_GENERATION + Integer.parseInt(cal_id_num.substring(0, 2));
 	} else {
 		user_year = Const.OLD_GENERATION + Integer.parseInt(cal_id_num.substring(0, 2));
@@ -101,7 +178,7 @@ public int cal_Age () { //1. ÀÔ·Â¹ŞÀº ÁÖ¹Î¹øÈ£¿¡¼­ »ı³â¿ùÀÏ ±¸ÇÏ±â
 }
 
 
-public int cal_Age_Group() { //³ªÀÌº° Á¾·ù´ë·Î ±¸ºĞ
+public int cal_Age_Group() { //ë‚˜ì´ë³„ ì¢…ë¥˜ëŒ€ë¡œ êµ¬ë¶„
 	int age = cal_Age();
 	if (age < Const.MIN_CHILD) {
 		return 1;
@@ -145,7 +222,7 @@ public int cal_Age_Group() { //³ªÀÌº° Á¾·ù´ë·Î ±¸ºĞ
 	}
 
 
-	//7. ÃÑ °¡°İ °è»êÇÏ±â (Æ¼ÄÏ °¡°İ x ¼ö·®)
+	//7. ì´ ê°€ê²© ê³„ì‚°í•˜ê¸° (í‹°ì¼“ ê°€ê²© x ìˆ˜ëŸ‰)
 	int function_price_result(int cal_price, int order_amount) {
 		return cal_price * order_amount; 
 	}

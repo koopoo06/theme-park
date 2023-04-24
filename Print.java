@@ -1,7 +1,4 @@
 package Practice;
-
-import java.util.ArrayList;
-
 import Practice.Cal.Const;
 
 public class Print {
@@ -9,28 +6,219 @@ OrderList orderlist = new OrderList();
 
 
 
+public static void print_error_message(){ //ì—ëŸ¬ë©”ì„¸ì§€ ì¶œë ¥
+if (Const.LANGUAGE == 0) {
+	Const.ERROR_MESSAGE = "ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.";
+	System.out.println(Const.ERROR_MESSAGE);
+ } else if  (Const.LANGUAGE == 1){
+	 Const.ERROR_MESSAGE = "Please try again";
+	 System.out.println(Const.ERROR_MESSAGE);
+ } else if  (Const.LANGUAGE == 2){
+	 Const.ERROR_MESSAGE = "IntÃ©ntalo de nuevo";
+	 System.out.println(Const.ERROR_MESSAGE);
+ }
+}
 
-public static void print_error_message(){ //¿¡·¯¸Ş¼¼Áö Ãâ·Â
-        System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+
+
+
+public static void print_ticket_select() {
+	if (Const.LANGUAGE == 0) {
+		Const.QUESTION_TICKETSELECT = "ê¶Œì¢…ì„ ì„ íƒí•˜ì„¸ìš”." + "\n1. ì£¼ê°„ê¶Œ\n" + "2. ì•¼ê°„ê¶Œ";
+		System.out.println(Const.QUESTION_TICKETSELECT);
+	} else if (Const.LANGUAGE == 1) {
+		Const.QUESTION_TICKETSELECT = "Choose a ticket type" + "\n1. Day ticket\n" + "2. Night ticket";
+		System.out.println(Const.QUESTION_TICKETSELECT);
+	}  else if  (Const.LANGUAGE == 2) {
+		Const.QUESTION_TICKETSELECT = "Elige un tipo de entrada" + "\n1. Entrada de un dÃ­a\n" + "2. Entrada nocturna";
+		System.out.println(Const.QUESTION_TICKETSELECT);
+	}
+}
+
+
+
+
+public static void print_ID_num() {
+	if (Const.LANGUAGE == 0) {
+		Const.QUESTION_ID_NUM = "ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.";
+		System.out.println(Const.QUESTION_ID_NUM);
+	}  else if (Const.LANGUAGE == 1) {
+		Const.QUESTION_ID_NUM = "Input your ID number";
+		System.out.println(Const.QUESTION_ID_NUM);
+	} else if  (Const.LANGUAGE == 2) {
+		Const.QUESTION_ID_NUM = "Ingrese su nÃºmero de identificaciÃ³n";
+		System.out.println(Const.QUESTION_ID_NUM);
+	}
+}
+
+ 
+
+
+
+public static void print_ticket_amount() {
+	if (Const.LANGUAGE == 0) {
+		Const.QUESTION_TICKET_AMOUNT = "ëª‡ ê°œë¥¼ ì£¼ë¬¸í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (ìµœëŒ€ 10ê°œ)";
+		System.out.println(Const.QUESTION_TICKET_AMOUNT);
+	}  else if (Const.LANGUAGE == 1) {
+		Const.QUESTION_TICKET_AMOUNT = "Input the number of tickets (Maximum of 10)";
+		System.out.println(Const.QUESTION_TICKET_AMOUNT);
+	} else if  (Const.LANGUAGE == 2) {
+		Const.QUESTION_TICKET_AMOUNT = "Ingrese el nÃºmero de boletos (MÃ¡ximo de 10)";
+		System.out.println(Const.QUESTION_TICKET_AMOUNT);
+	}
+}
+
+
+
+
+
+
+public static void print_special_rates() {
+	if (Const.LANGUAGE == 0) {
+		Const.QUESTION_SPECIAL = "ìš°ëŒ€ì‚¬í•­ì„ ì„ íƒí•˜ì„¸ìš”.\n" + "1. ì—†ìŒ (ë‚˜ì´ ìš°ëŒ€ëŠ” ìë™ì²˜ë¦¬)\n" + "2. ì¥ì• ì¸\n" 
+				+ "3. êµ­ê°€ìœ ê³µì\n" + "4. ë‹¤ìë…€\n" + "5. ì„ì‚°ë¶€";
+		System.out.println(Const.QUESTION_SPECIAL);
+	}  else if (Const.LANGUAGE == 1) {
+		Const.QUESTION_SPECIAL = "Select a special discount option\n" + "1. None applicable\n" + "2. Disorder\n" 
+				+ "3. National merit\n" + "4. Multi-child family\n" + "5. Expectant Mother";
+		System.out.println(Const.QUESTION_SPECIAL);
+	} else if  (Const.LANGUAGE == 2) {
+		Const.QUESTION_SPECIAL = "Seleccione una opciÃ³n de descuento especial\n" + "1. Ninguno aplicable\n" + "2. Trastorno\n"
+				+ "3. MÃ©rito nacional\n" + "4. Familia con varios hijos\n" + "5. Futura madre";
+		System.out.println(Const.QUESTION_SPECIAL);
+	}
+}
+
+
+
+
+ public static void print_price(int price_result) { //ê°€ê²© ë¬¸êµ¬
+	 if (Const.LANGUAGE == 0) {
+		 Const.PRICE_MESSAGE = "ê°€ê²©ì€" + price_result + " ì› ì…ë‹ˆë‹¤. \n ê°ì‚¬í•©ë‹ˆë‹¤.\n";
+		 System.out.println(Const.PRICE_MESSAGE);
+	 } else if (Const.LANGUAGE == 1) {
+		 Const.PRICE_MESSAGE = "The ticket price is " + price_result + " won.\nThank you.\n";
+		 System.out.println(Const.PRICE_MESSAGE);
+	 } else if  (Const.LANGUAGE == 2) {
+		Const.PRICE_MESSAGE = "El precio del boleto es " + price_result + " won. \n Gracias.\n";
+		System.out.println(Const.PRICE_MESSAGE);
+	}
  }
 
  
- public static void print_price(int price_result) { //°¡°İ ¹®±¸
-     System.out.printf("°¡°İÀº %d ¿ø ÀÔ´Ï´Ù.\n", price_result); 
-     System.out.println("°¨»çÇÕ´Ï´Ù.");
-     System.out.println();
+ 
+ 
+ public static void print_continue() {
+	 if (Const.LANGUAGE == 0) {
+		 Const.QUESTION_CONTINUE = "ê³„ì† ë°œê¶Œ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?\n1. í‹°ì¼“ ë°œê¶Œ\n2. ì¢…ë£Œ";
+		 System.out.println(Const.QUESTION_CONTINUE);
+	 } else if (Const.LANGUAGE == 1) {
+		 Const.QUESTION_CONTINUE = "Do you like to order more?\n1. Yes please \n2. No I've ordered all";
+		 System.out.println(Const.QUESTION_CONTINUE);
+	 } else if  (Const.LANGUAGE == 2) {
+		Const.QUESTION_CONTINUE = "Â¿Quiere pedir mÃ¡s?\n1. SÃ­, por favor \n2. No, he pedido todo";
+		System.out.println(Const.QUESTION_CONTINUE);
+	}
  }
+ 
+ 
+ 
 
+ 
+ public static void print_continue_final() {
+	 if (Const.LANGUAGE == 0) {
+		 Const.QUESTION_CONTINUE_FINAL = "ê³„ì† ì§„í–‰ (1: ìƒˆë¡œìš´ ì£¼ë¬¸, 2: í”„ë¡œê·¸ë¨ ì¢…ë£Œ): ";
+		 System.out.println(Const.QUESTION_CONTINUE_FINAL);
+	 } else if (Const.LANGUAGE == 1)  {
+		 Const.QUESTION_CONTINUE_FINAL = "Continue order (1 : New order , 2: Exit program)";
+		 System.out.println(Const.QUESTION_CONTINUE_FINAL);
+	 } else if  (Const.LANGUAGE == 2) {
+		Const.QUESTION_CONTINUE_FINAL = "Continuar pedido (1: Nuevo pedido, 2: Salir del programa)";
+		System.out.println(Const.QUESTION_CONTINUE_FINAL);
+	}
+ }
+ 
+ 
+ 
+ 
+ public static void print_header() {
+	 if (Const.LANGUAGE == 0) {
+		 Const.HEADER_MESSAGE = "í‹°ì¼“ ë°œê¶Œì„ ì¢…ë£Œí•©ë‹ˆë‹¤. ê°ì‚¬í•©ë‹ˆë‹¤\n";
+		 System.out.println(Const.HEADER_MESSAGE);
+	 } else if (Const.LANGUAGE == 1) {
+		 Const.HEADER_MESSAGE = "Exit the program. Thank you\n";
+		 System.out.println(Const.HEADER_MESSAGE);
+	 } else if  (Const.LANGUAGE == 2) {
+		Const.HEADER_MESSAGE = "Salir del programa. Gracias\n";
+		System.out.println(Const.HEADER_MESSAGE);
+		}
+ }
+ 
+ 
+ 
+ 
+ public static void print_divider() {
+	 System.out.println("----------------------------------------------------");
+ }
+ 
+ 
+ 
+ public static void print_divider_bold() {
+	 System.out.println("=====================================================");
+ } 
+ 
+ 
+ 
+ 
+ 
+ public static void print_header_title() {
+	 if (Const.LANGUAGE == 0) {
+		 Const.TICKET_SELECT = "ê¶Œì¢…";
+		 Const.AGE = "ë‚˜ì´";
+		 Const.COUNT = "ì£¼ë¬¸ê°œìˆ˜";
+		 Const.PRICE = "ì´ìš©ìš”ê¸ˆ";
+		 Const.DISCOUNT = "ìš°ëŒ€ì‚¬í•­";
+	 } else if (Const.LANGUAGE == 1)  {
+		 Const.TICKET_SELECT = "TYPES";
+		 Const.AGE = "AGES";
+		 Const.COUNT = "AMOUNTS";
+		 Const.PRICE = "CHARGES";
+		 Const.DISCOUNT = "DISCOUNTS";
+	 } else if  (Const.LANGUAGE == 2) {
+		 Const.TICKET_SELECT = "TIPOS";
+		 Const.AGE = "EDADES";
+		 Const.COUNT = "CANTIDADES";
+		 Const.PRICE = "CARGOS";
+		 Const.DISCOUNT = "DESCUENTO ";
+	 }
+ }
+ 
+ 
+ 
+ public static void print_total_prices (int totalprice) {
+		if (Const.LANGUAGE == 0) {
+			 Const.TOTALPRICE_MESSAGE = "  ì…ì¥ë£Œ ì´ì•¡ì€ " + totalprice + " ì› ì…ë‹ˆë‹¤.";
+			 System.out.println(Const.TOTALPRICE_MESSAGE);
+		 } else if (Const.LANGUAGE == 1) {
+			 Const.TOTALPRICE_MESSAGE = "  TOTAL PRICE IS " + totalprice + " WON";
+			 System.out.println(Const.TOTALPRICE_MESSAGE);
+		 }  else if  (Const.LANGUAGE == 2) {
+			 Const.TOTALPRICE_MESSAGE = " EL PRECIO TOTAL ES " + totalprice + " WON";
+			 System.out.println(Const.TOTALPRICE_MESSAGE);
+		 }
+	}
+ 
  
  
  public void print_List_Of_Orders() { 
-	 //Çì´õ Ãâ·Â 
-	 System.out.println("Æ¼ÄÏ ¹ß±ÇÀ» Á¾·áÇÕ´Ï´Ù. °¨»çÇÕ´Ï´Ù");
-	 System.out.println("====================================================");
-	 System.out.printf("%5s %7s %5s %5s %10s\n", "±ÇÁ¾", "³ªÀÌ", "ÁÖ¹®°³¼ö", "ÀÌ¿ë¿ä±İ", "¿ì´ë»çÇ×");
-	 System.out.println("----------------------------------------------------");
+	 //í—¤ë” ì¶œë ¥ 
+	 print_header();
+	 print_divider_bold();
+	 print_header_title();
+	 System.out.printf("%8s %7s %5s %5s %10s\n", Const.TICKET_SELECT, Const.AGE ,Const.COUNT,  Const.PRICE, Const.DISCOUNT );
+	 print_divider();
 	
-	 //ÇÊ¿äÇÑ º¯¼ö ¼±¾ğ
+	 //í•„ìš”í•œ ë³€ìˆ˜ ì„ ì–¸
 	 int[] order = {};
 	 String ticketselect = "";
 	 String agegroup = "";
@@ -41,11 +229,12 @@ public static void print_error_message(){ //¿¡·¯¸Ş¼¼Áö Ãâ·Â
 	 
 	 
 	// ArrayList<int[]> print_orderList = orderlist.getOrderList();
-	 for (int i = 0 ; i < OrderList.orderList.size(); i++) { //orderlist¹è¿­ÀÇ Å©±â¸¸Å­ ¹İº¹
-		 order = OrderList.orderList.get(i); //orderlistÀÇ i¹øÂ° ¹è¿­À» order ¹è¿­¿¡ ÀúÀå
-	
+	 for (int i = 0 ; i < OrderList.orderList.size(); i++) { //orderlistë°°ì—´ì˜ í¬ê¸°ë§Œí¼ ë°˜ë³µ
+		 order = OrderList.orderList.get(i); //orderlistì˜ ië²ˆì§¸ ë°°ì—´ì„ order ë°°ì—´ì— ì €ì¥
+		 
+		 if (Const.LANGUAGE == 0) {
 		 ticketselect = order[0] == 1 ? Const.DAY_TICKET : Const.NIGHT_TICKET;
-		 //Ã¹¹øÂ° ÀÚ¸®°¡ 1ÀÌ¶ó¸é "ÁÖÁß±Ç", ¾Æ´Ï¶ó¸é "¿ÀÈÄ±Ç" ¹®ÀÚ¿­À» º¯¼ö¿¡ ÀúÀå
+		 //ì²«ë²ˆì§¸ ìë¦¬ê°€ 1ì´ë¼ë©´ "ì£¼ì¤‘ê¶Œ", ì•„ë‹ˆë¼ë©´ "ì˜¤í›„ê¶Œ" ë¬¸ìì—´ì„ ë³€ìˆ˜ì— ì €ì¥
 		 
 		 
 		 switch(order[1]) {
@@ -55,15 +244,15 @@ public static void print_error_message(){ //¿¡·¯¸Ş¼¼Áö Ãâ·Â
 		 case 4:	 agegroup = Const.AGE_ADULT; break;
 		 case 5:	 agegroup = Const.AGE_OLD; break;
 		 }
-		 //µÎ¹øÂ° ÀÚ¸®°¡ °¢°¢ 1,2,3,4,5ÀÏ¶§ ¿¬·ÉÃş ¹®ÀÚ¿­À» º¯¼ö¿¡ ÀúÀå
+		 //ë‘ë²ˆì§¸ ìë¦¬ê°€ ê°ê° 1,2,3,4,5ì¼ë•Œ ì—°ë ¹ì¸µ ë¬¸ìì—´ì„ ë³€ìˆ˜ì— ì €ì¥
 		 
 		 quantity = order[2];
-		 //¼ö·®Àº 3¹øÂ° ÀÚ¸®
+		 //ìˆ˜ëŸ‰ì€ 3ë²ˆì§¸ ìë¦¬
 		 
 		 
 		 price = order[3];
 		 totalprice = totalprice + order[3];
-		 //°¡°İÀº ÇÕ°è·Î ±¸ÇÏ±â
+		 //ê°€ê²©ì€ í•©ê³„ë¡œ êµ¬í•˜ê¸°
 		 
 		 
 		 switch(order[4]) {
@@ -73,16 +262,89 @@ public static void print_error_message(){ //¿¡·¯¸Ş¼¼Áö Ãâ·Â
 		 case 4:	 discount = Const.MULTICHILD_DISCOUNT; break;
 		 case 5:	 discount = Const.PREGNANT_DISCOUNT; break;
 		 }
-		 //¹è¿­ÀÇ 5¹øÂ°ÀÚ¸®´Â ÇÒÀÎ»çÇ× °¢°¢ 1,2,3,4,5ÀÏ¶§ ¹®ÀÚ¿­À» º¯¼ö¿¡ ÀúÀå 
+		 //ë°°ì—´ì˜ 5ë²ˆì§¸ìë¦¬ëŠ” í• ì¸ì‚¬í•­ ê°ê° 1,2,3,4,5ì¼ë•Œ ë¬¸ìì—´ì„ ë³€ìˆ˜ì— ì €ì¥ 
+		 System.out.printf("%5s %5s %5d %15dì› %10s \n", ticketselect, agegroup, quantity, price, discount); //ë³€ìˆ˜ë“¤ ì¶œë ¥
+	
+	} else if (Const.LANGUAGE == 1) {
+		 ticketselect = order[0] == 1 ? Const.ENG_DAY_TICKET : Const.ENG_NIGHT_TICKET;
+		 //ì²«ë²ˆì§¸ ìë¦¬ê°€ 1ì´ë¼ë©´ "ì£¼ì¤‘ê¶Œ", ì•„ë‹ˆë¼ë©´ "ì˜¤í›„ê¶Œ" ë¬¸ìì—´ì„ ë³€ìˆ˜ì— ì €ì¥
 		 
 		 
-		 System.out.printf("%5s %5s %5d %15d¿ø %10s \n", ticketselect, agegroup, quantity, price, discount); //º¯¼öµé Ãâ·Â
+		 switch(order[1]) {
+		 case 1:	 agegroup = Const.ENG_AGE_BABY; break;
+		 case 2:	 agegroup = Const.ENG_AGE_CHILD; break;
+		 case 3:	 agegroup = Const.ENG_AGE_TEEN; break;
+		 case 4:	 agegroup = Const.ENG_AGE_ADULT; break;
+		 case 5:	 agegroup = Const.ENG_AGE_OLD; break;
+		 }
+		 //ë‘ë²ˆì§¸ ìë¦¬ê°€ ê°ê° 1,2,3,4,5ì¼ë•Œ ì—°ë ¹ì¸µ ë¬¸ìì—´ì„ ë³€ìˆ˜ì— ì €ì¥
+		 
+		 quantity = order[2];
+		 //ìˆ˜ëŸ‰ì€ 3ë²ˆì§¸ ìë¦¬
+		 
+		 
+		 price = order[3];
+		 totalprice = totalprice + order[3];
+		 //ê°€ê²©ì€ í•©ê³„ë¡œ êµ¬í•˜ê¸°
+		 
+		 
+		 switch(order[4]) {
+		 case 1:	 discount = Const.ENG_NO_DISCOUNT; break;
+		 case 2:	 discount = Const.ENG_DISABLE_DISCOUNT; break;
+		 case 3:	 discount = Const.ENG_MERIT_DISCOUNT; break;
+		 case 4:	 discount = Const.ENG_MULTICHILD_DISCOUNT; break;
+		 case 5:	 discount = Const.ENG_PREGNANT_DISCOUNT; break;
+		 }
+		 //ë°°ì—´ì˜ 5ë²ˆì§¸ìë¦¬ëŠ” í• ì¸ì‚¬í•­ ê°ê° 1,2,3,4,5ì¼ë•Œ ë¬¸ìì—´ì„ ë³€ìˆ˜ì— ì €ì¥ 
+		 
+		 System.out.printf("%8s %9s %4d %11dW %14s \n", ticketselect, agegroup, quantity, price, discount); //ë³€ìˆ˜ë“¤ ì¶œë ¥ 
+	 } else if (Const.LANGUAGE == 2) {
+
+		 ticketselect = order[0] == 1 ? Const.ESP_DAY_TICKET : Const.ESP_NIGHT_TICKET;
+		 //ì²«ë²ˆì§¸ ìë¦¬ê°€ 1ì´ë¼ë©´ "ì£¼ì¤‘ê¶Œ", ì•„ë‹ˆë¼ë©´ "ì˜¤í›„ê¶Œ" ë¬¸ìì—´ì„ ë³€ìˆ˜ì— ì €ì¥
+		 
+		 
+		 switch(order[1]) {
+		 case 1:	 agegroup = Const.ESP_AGE_BABY; break;
+		 case 2:	 agegroup = Const.ESP_AGE_CHILD; break;
+		 case 3:	 agegroup = Const.ESP_AGE_TEEN; break;
+		 case 4:	 agegroup = Const.ESP_AGE_ADULT; break;
+		 case 5:	 agegroup = Const.ESP_AGE_OLD; break;
+		 }
+		 //ë‘ë²ˆì§¸ ìë¦¬ê°€ ê°ê° 1,2,3,4,5ì¼ë•Œ ì—°ë ¹ì¸µ ë¬¸ìì—´ì„ ë³€ìˆ˜ì— ì €ì¥
+		 
+		 quantity = order[2];
+		 //ìˆ˜ëŸ‰ì€ 3ë²ˆì§¸ ìë¦¬
+		 
+		 
+		 price = order[3];
+		 totalprice = totalprice + order[3];
+		 //ê°€ê²©ì€ í•©ê³„ë¡œ êµ¬í•˜ê¸°
+		 
+		 
+		 switch(order[4]) {
+		 case 1:	 discount = Const.ESP_NO_DISCOUNT; break;
+		 case 2:	 discount = Const.ESP_DISABLE_DISCOUNT; break;
+		 case 3:	 discount = Const.ESP_MERIT_DISCOUNT; break;
+		 case 4:	 discount = Const.ESP_MULTICHILD_DISCOUNT; break;
+		 case 5:	 discount = Const.ESP_PREGNANT_DISCOUNT; break;
+		 }
+		 //ë°°ì—´ì˜ 5ë²ˆì§¸ìë¦¬ëŠ” í• ì¸ì‚¬í•­ ê°ê° 1,2,3,4,5ì¼ë•Œ ë¬¸ìì—´ì„ ë³€ìˆ˜ì— ì €ì¥ 
+		 
+		 
+		 System.out.printf("%8s %9s %4d %11dW %14s \n", ticketselect, agegroup, quantity, price, discount); //ë³€ìˆ˜ë“¤ ì¶œë ¥  
 	 }
-	 System.out.println();
-	 System.out.println("  ÀÔÀå·á ÃÑ¾×Àº " + totalprice + " ¿ø ÀÔ´Ï´Ù.");
-	 System.out.println("=====================================================");
+	 //for ends here
+	}
+	 
+	System.out.println();
+	
+	print_total_prices(totalprice);
+	
+	print_divider_bold();
+	
  	}
- }
+}
 
 
 

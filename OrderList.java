@@ -64,11 +64,6 @@ public class OrderList {
          setDiscount(discount);
          int[] orderarray = {ticketselect, agegroup, quantity, price, discount};
          orderList.add(orderarray);
-         
-         for (int i = 0; i < orderList.size(); i++) {
-        	  System.out.println(Arrays.toString(orderList.get(i)));
          }
     }
-    
-
-}
+   
