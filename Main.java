@@ -1,7 +1,5 @@
 package Practice;
 
-import java.util.Locale;
-
 import Practice.Cal.Const;
 
 public class Main {
@@ -23,9 +21,16 @@ public static void main(String[] args){
 	Main main = new Main();
 	OrderList orderlist = new OrderList();
 	
-	cal.cal_language();
+	cal.cal_language(); //language change
 
 	do {
+		 int menu_select = Input.input_first_menu(); //1. buy ticket 2. sales report
+		 
+		 if (menu_select == 2) { //read and show CSV Sales Report file
+			 Excel.reading_file();
+		 }
+		 
+		 if (menu_select == 1) { 
 		while(true) {		
 		main.ticketselect =Input.input_Ticket_Select(); //권종 입력
 		main.agegroup = cal.cal_Age_Group(); //주민번호 입력, 나이 계산
@@ -44,10 +49,12 @@ public static void main(String[] args){
 			break;
 		}
 	}
-	
-	print.print_List_Of_Orders();
-	main.concon = input.input_Continue_Continue();
+	print.print_List_Of_Orders();	
+	}
+		
+	 Excel.writing_file(); //write file of new data
+	 main.concon = input.input_Continue_Continue(); 
+	 
 	} while (main.concon == Const.EXIT); 	//입력값이 1 때까지 무한 반복
-	OrderList.orderList.clear(); //orderlist array 를 초기화
 	}
 }

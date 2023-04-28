@@ -1,8 +1,26 @@
 package Practice;
+import java.io.FileWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+
 import Practice.Cal.Const;
 
 public class Print {
 OrderList orderlist = new OrderList();
+
+public static ArrayList<String[]> excel_list = new ArrayList<String[]>(); //excel array save
+private String ticketselect, agegroup, discount;
+private int quantity, price;
+private LocalDateTime now;
+
+
+
+
+
+public static void print_first_message() {
+	System.out.println("매뉴를 선택하세요\n1. 티켓발권\n2. 매출분석");
+}
 
 
 
@@ -158,7 +176,7 @@ public static void print_special_rates() {
  
  
  public static void print_divider() {
-	 System.out.println("----------------------------------------------------");
+	 System.out.println("-----------------------------------------------------");
  }
  
  
@@ -210,6 +228,7 @@ public static void print_special_rates() {
  
  
  
+ 
  public void print_List_Of_Orders() { 
 	 //헤더 출력 
 	 print_header();
@@ -220,15 +239,15 @@ public static void print_special_rates() {
 	
 	 //필요한 변수 선언
 	 int[] order = {};
-	 String ticketselect = "";
-	 String agegroup = "";
-	 int quantity = 0;
-	 int price = 0;
 	 int totalprice = 0;
-	 String discount ="";
+	 
+	 now = LocalDateTime.now();
+	 
+	 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+	 
+	 String now_formatted = now.format(formatter);
 	 
 	 
-	// ArrayList<int[]> print_orderList = orderlist.getOrderList();
 	 for (int i = 0 ; i < OrderList.orderList.size(); i++) { //orderlist배열의 크기만큼 반복
 		 order = OrderList.orderList.get(i); //orderlist의 i번째 배열을 order 배열에 저장
 		 
@@ -332,19 +351,26 @@ public static void print_special_rates() {
 		 //배열의 5번째자리는 할인사항 각각 1,2,3,4,5일때 문자열을 변수에 저장 
 		 
 		 
-		 System.out.printf("%8s %9s %4d %11dW %14s \n", ticketselect, agegroup, quantity, price, discount); //변수들 출력  
+		 System.out.printf("%8s %9s %4d %11dW %14s \n", ticketselect, agegroup, quantity, price, discount); //변수들 출력 
 	 }
-	 //for ends here
-	}
 	 
+	 //excel list
+	 String[] print_excel_array = {now_formatted, ticketselect, agegroup, String.valueOf(quantity), String.valueOf(price), discount};
+	 
+	 excel_list.add(print_excel_array);
+	 
+ //for ends here
+	 }
+
 	System.out.println();
 	
 	print_total_prices(totalprice);
 	
 	print_divider_bold();
 	
+	OrderList.orderList.clear();
  	}
-}
+ }
 
 
 

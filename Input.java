@@ -7,6 +7,20 @@ public class Input {
 	Print print = new Print();
 	Cal cal = new Cal();
 	static Scanner scanner = new Scanner(System.in);		
+
+	
+	
+public static int input_first_menu() {	//매뉴를 선택하세요	1. 티켓발권	2. 매출분석
+	Print.print_first_message();
+	
+	int menu_select = 0;
+	menu_select = scanner.nextInt();
+	
+	return menu_select;
+}
+
+	
+	
 	
 
 public static int input_Ticket_Select() { // 1. 권종 입력 -> ticketSelect 리턴받음 (주간권 / 야간권)
